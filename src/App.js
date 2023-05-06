@@ -12,9 +12,21 @@ function App() {
         <h4>블로그임</h4>
       </div>
       <div className='list'>
-        <h4>{listTitle[0]} <span onClick={() => {
-          setThumb(thumb + 1)
-        }}>👍🏻</span> {thumb} </h4>
+        <h4>{listTitle[0]}
+          <span onClick={() => {
+            setThumb(thumb + 1)
+          }}>👍🏻
+          </span>
+          {thumb}
+        </h4>
+
+        <button onClick={() => {
+          const copy = [...listTitle];
+          copy[0] = '여자 코트 추천';
+          setListTitle(copy)
+        }}>클릭
+        </button>
+
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
