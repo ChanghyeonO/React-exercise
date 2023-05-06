@@ -4,25 +4,25 @@ import { useState } from 'react';
 
 function App() {
 
-  const [recommend, setRecommend] = useState('남자 코트 추천')
-  const [udong, setUdong] = useState('강남 우동 맛집')
-  const [jsStudy, setJsStudy] = useState('자바스크립트 공부')
-
+  const [listTitle, setListTitle] = useState(['남자 코트 추천', '강남 우동 맛집', '자바스크립트 공부']);
+  const [thumb, setThumb] = useState(0);
   return (
     <div className="App">
       <div className='black-nav'>
         <h4>블로그임</h4>
       </div>
       <div className='list'>
-        <h4>{recommend}</h4>
+        <h4>{listTitle[0]} <span onClick={() => {
+          setThumb(thumb + 1)
+        }}>👍🏻</span> {thumb} </h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
-        <h4>{udong}</h4>
+        <h4>{listTitle[1]}</h4>
         <p>2월 17일 발행</p>
       </div>
       <div className='list'>
-        <h4>{jsStudy}</h4>
+        <h4>{listTitle[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
     </div>
